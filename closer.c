@@ -56,6 +56,15 @@ int main() {
         }
     // runs if "price is right" rules are not being used
     } else {
+        if (abs(first - picked) == abs(second - picked)) {
+            printf("Both numbers are the same, no one wins today");
+        } else if (abs(first - picked) < abs(second - picked)) {
+            printf("First wins!\n");
+            printf("The picked number was %d\n", picked);
+        } else if (abs(second - picked) < abs(first - picked)) {
+            printf("Second wins!\n");
+            printf("The picked number was %d\n", picked);
+        }
         // printf("pir rules: false\n");
     }
     //     if(((first - picked) <= 0) and ((second - picked) <= 0));

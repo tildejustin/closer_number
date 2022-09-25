@@ -6,6 +6,7 @@
 int booleanify (int);
 
 int main() {
+    // TODO: add win prints to functions
     int first, second, picked, pir_num, range;
     bool pir;
     // init the random number generator

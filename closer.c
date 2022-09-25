@@ -4,9 +4,9 @@
 #include <time.h>
 
 int booleanify (int);
+void firstwins (), secondwins ();
 
 int main() {
-    // TODO: add win prints to functions
     int first, second, picked, pir_num, range;
     bool pir;
     // init the random number generator
@@ -18,7 +18,7 @@ int main() {
     // generate a random number and take the modulus of range, then add one to get a number between 1 and the picked range
     // not secure, but who cares
     picked = (rand() % range) + 1;
-    // printf("picked: %d\n", picked);
+    printf("picked: %d\n", picked);
     printf("Price is Right rules? (0/1) ");
     scanf("%d", &pir_num);
     // turn pir into a bool, doesn't matter at all but it's practice with c functions
@@ -41,30 +41,28 @@ int main() {
         if (!(picked - first < 0 && picked - second < 0)) {
             // runs if numbers are equal
             if (first == second) {
-                printf("Both numbers are correct, no one wins today\n");
+                printf("Both numbers are correct\n");
             // if first number is closer or second number goes over the picked number
             } else if (second - picked > 0 || first > second) {
-                printf("First wins!\n");
-                printf("The picked number was %d\n", picked);
+                firstwins (picked);
             // if second number is closer or first number goes over
             } else if (first - picked > 0 || second > first) {
-                printf("Second wins!\n");
-                printf("The picked number was %d\n", picked);
+                secondwins (picked);
             }
         // exits if both numbers are over
         } else {
-            printf("Both numbers went over, unlucky :/\n");
+            printf("Both numbers went over\n");
         }
     // runs if "price is right" rules are not being used
-    } else {
+    } else if(!pir) {
+        // if (!(first - picked) && !(second - picked)) {
+        //     printf("Both numbers are correct\n");
         if (abs(first - picked) == abs(second - picked)) {
-            printf("Both numbers are the same, no one wins today\n");
+            printf ("Both numbers are the same distance away\n");
         } else if (abs(first - picked) < abs(second - picked)) {
-            printf("First wins!\n");
-            printf("The picked number was %d\n", picked);
+            firstwins (picked);
         } else if (abs(second - picked) < abs(first - picked)) {
-            printf("Second wins!\n");
-            printf("The picked number was %d\n", picked);
+            secondwins (picked);
         }
         // printf("pir rules: false\n");
     }
@@ -80,4 +78,14 @@ int booleanify (int input) {
     else {
         return false;
     }
+}
+
+void firstwins (int picked) {
+    printf("First wins!\n");
+    printf("The picked number was %d\n", picked);
+}
+
+void secondwins (int picked) {
+    printf("Second wins!\n");
+    printf("The picked number was %d\n", picked);
 }

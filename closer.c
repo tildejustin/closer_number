@@ -18,7 +18,7 @@ int main() {
     // generate a random number and take the modulus of range, then add one to get a number between 1 and the picked range
     // not secure, but who cares
     picked = (rand() % range) + 1;
-    printf("picked: %d\n", picked);
+    // printf("picked: %d\n", picked);
     printf("Price is Right rules? (0/1) ");
     scanf("%d", &pir_num);
     // turn pir into a bool, doesn't matter at all but it's practice with c functions

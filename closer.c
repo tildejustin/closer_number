@@ -18,16 +18,16 @@ int main() {
     // generate a random number and take the modulus of range, then add one to get a number between 1 and the picked range
     // not secure, but who cares
     picked = (rand() % range) + 1;
-    printf("picked: %d\n", picked);
+    // printf("picked: %d\n", picked);
+    printf("Price is Right rules? (0/1) ");
+    scanf("%d", &pir_num);
+    // turn pir into a bool, doesn't matter at all but it's practice with c functions
+    pir = booleanify(pir_num);
     printf("What is the first number? ");
     scanf("%d", &first);
     printf("What is the second number? ");
     scanf("%d", &second);
     // only does "price is right" rules if given a 1, else doesn't use them
-    printf("Price is Right rules? (0/1) ");
-    scanf("%d", &pir_num);
-    // turn pir into a bool, doesn't matter at all but it's practice with c functions
-    pir = booleanify(pir_num);
     // printf("First num: %d, Second num: %d\n", first, second);
     // terminates program if any number is less than 1
     if (first < 1 || second < 1) {
@@ -58,7 +58,7 @@ int main() {
     // runs if "price is right" rules are not being used
     } else {
         if (abs(first - picked) == abs(second - picked)) {
-            printf("Both numbers are the same, no one wins today");
+            printf("Both numbers are the same, no one wins today\n");
         } else if (abs(first - picked) < abs(second - picked)) {
             printf("First wins!\n");
             printf("The picked number was %d\n", picked);

@@ -42,6 +42,7 @@ int main() {
             // runs if numbers are equal
             if (first == second) {
                 printf("Both numbers are correct\n");
+                printf("The picked number was %d\n", picked);
             // if first number is closer or second number goes over the picked number
             } else if (second - picked > 0 || first > second) {
                 firstwins (picked);
@@ -52,6 +53,7 @@ int main() {
         // exits if both numbers are over
         } else {
             printf("Both numbers went over\n");
+            printf("The picked number was %d\n", picked);
         }
     // runs if "price is right" rules are not being used
     } else if(!pir) {
@@ -59,6 +61,7 @@ int main() {
         //     printf("Both numbers are correct\n");
         if (abs(first - picked) == abs(second - picked)) {
             printf ("Both numbers are the same distance away\n");
+            printf("The picked number was %d\n", picked);
         } else if (abs(first - picked) < abs(second - picked)) {
             firstwins (picked);
         } else if (abs(second - picked) < abs(first - picked)) {

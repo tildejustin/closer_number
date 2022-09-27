@@ -64,7 +64,15 @@ int main() {
         } else if (abs(second - picked) < abs(first - picked)) {
             secondwins (picked);
         }
-        // printf("pir rules: false\n");
+        printf("press enter to close\n");
+        // TODO implement enter to exit
+        // while (true) {
+        //     if (key.enter) {
+        //         exit(0)
+        //     }
+        // }
+        // temp while enter to close is not yet implemented
+        scanf(" ");
     }
     //     if(((first - picked) <= 0) and ((second - picked) <= 0));
     //         printf("Both numbers are less than or equal to the picked number \n");

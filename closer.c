@@ -34,6 +34,7 @@ int main() {
         printf("One or both numbers are less than one, terminating program\n");
         exit(0);
     }
+    // TODO check if any number is above the range
     // runs this logic if using "price is right" rules
     if (pir) {
         // runs only if both numbers don't exceed the picked number
